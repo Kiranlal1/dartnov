@@ -45,7 +45,7 @@ void main(){
   var list5=List.from(list1);
   print(list5);
 
-  var list6=List.generate(6, (index) => index,growable:true); //length,index/index+1,null
+  var list6=List.generate(6, (index) => index,growable:false); //length,index/index+1,null  already fixed
   print(list6);
   list6[0]=25;
   print(list6);
@@ -53,5 +53,12 @@ void main(){
   list6.forEach((e){
     print(e);
   });
+
+  print(list6.join(" : "));  //
+  var list7=List.unmodifiable(list6); //we cannot add new values in this list
+  print(list7);
+
+  var set1=list6.toSet();
+  print(set1);
 
 }
